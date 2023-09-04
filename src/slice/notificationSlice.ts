@@ -26,14 +26,12 @@ const notificationSlice = createSlice({
       state.type = action.payload.type;
       state.title = action.payload.title;
       state.description = action.payload.description;
-      console.log('data1', state.isReload);
       state.isReload = !state.isReload;
     },
     resetNotification: state => {
       state.isOpen = false;
       state.title = '';
       state.description = '';
-      console.log('data1', state.isReload);
       state.isReload = !state.isReload;
     },
   },

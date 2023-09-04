@@ -17,7 +17,7 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       const refreshToken = localStorage.getItem(REFRESH_TOKEN);
-      console.log('data1', refreshToken);
+
       if (refreshToken) {
         await dispatch(logout({ refreshToken: refreshToken })).unwrap();
       }
