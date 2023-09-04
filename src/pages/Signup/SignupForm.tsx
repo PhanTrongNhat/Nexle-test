@@ -27,6 +27,7 @@ const SignupForm = () => {
   const [passwordStatus, setPasswordStatus] = React.useState(
     PASSWORD_STATUS.INVALID
   );
+  const [isAcceptPrivacy, setIsAcceptPrivacy] = React.useState(false);
   const {
     register,
     handleSubmit,
@@ -179,13 +180,17 @@ const SignupForm = () => {
 
       <Space height={20}></Space>
       <Label className="container">
-        <input type="checkbox" />
+        <input
+          checked={isAcceptPrivacy}
+          onClick={() => setIsAcceptPrivacy(!isAcceptPrivacy)}
+          type="checkbox"
+        />
         <span className="checkmark" style={{ marginLeft: '5px' }}>
           i agree to <Privacy>privacy policy & terms</Privacy>
         </span>
       </Label>
       <Space height={14}></Space>
-      <Button disable={!isValid} text={'Sign Up'} />
+      <Button disable={!isValid || !isAcceptPrivacy} text={'Sign Up'} />
       <Space height={14}></Space>
       <SocialLogin
         actionText={'Sign in instead'}
