@@ -146,7 +146,6 @@ const SignupForm = () => {
           type={'email'}
           id={'email'}
           placeholder={'johndoe@gmail.com'}
-          name={'email'}
         ></Email>
         <ErrorWrapper>
           <ErrorMessageInput errors={errors} name={'email'} />
